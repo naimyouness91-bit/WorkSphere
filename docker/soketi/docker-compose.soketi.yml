@@ -1,0 +1,14 @@
+# Optional: run alongside main stack for local real-time notifications
+# Usage: docker compose -f docker/soketi/docker-compose.soketi.yml up -d
+services:
+  soketi:
+    image: quay.io/soketi/soketi:latest-16-alpine
+    container_name: worksphere-soketi
+    ports:
+      - "6001:6001"
+    environment:
+      SOKETI_DEBUG: "1"
+      SOKETI_DEFAULT_APP_ID: worksphere
+      SOKETI_DEFAULT_APP_KEY: worksphere-key
+      SOKETI_DEFAULT_APP_SECRET: worksphere-secret
+    restart: unless-stopped

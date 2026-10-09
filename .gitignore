@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Environment (keep committed *.example templates)
+.env
+.env.*
+!.env.example
+!*.env.example
+!.env.*.example
+
+# Logs / build info
+*.log
+*.tsbuildinfo
+
+# Build / cache
+frontend/dist/
+backend/bootstrap/cache/*.php
+!backend/bootstrap/cache/.gitignore
+
+# Laravel
+backend/storage/*.key
+backend/storage/logs/
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/views/
+backend/database/*.sqlite
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+.DS_Thumbs.db
+
+# Docker volumes (local)
+docker/mysql_data/

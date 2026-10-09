@@ -1,0 +1,18 @@
+{
+  "name": "worksphere",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend",
+    "lint:frontend": "npm run lint --prefix frontend",
+    "test:frontend": "npm run test --prefix frontend",
+    "dev:backend": "powershell -File scripts/start-backend.ps1",
+    "docker:up": "docker compose -f docker/docker-compose.yml --env-file docker/.env up -d --build",
+    "docker:down": "docker compose -f docker/docker-compose.yml down",
+    "docker:logs": "docker compose -f docker/docker-compose.yml logs -f",
+    "docker:monitoring": "docker compose -f docker/docker-compose.yml --profile monitoring up -d",
+    "dev:mobile": "npm run start --prefix mobile",
+    "mobile:android": "npm run android --prefix mobile",
+    "mobile:ios": "npm run ios --prefix mobile"
+  }
+}
